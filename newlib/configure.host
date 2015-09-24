@@ -286,6 +286,9 @@ case "${host_cpu}" in
 	machine_dir=v850
 	newlib_cflags="${newlib_cflags} -DPREFER_SIZE_OVER_SPEED "
 	;;
+  vc4)
+	machine_dir=vc4
+	;;
   visium)
 	machine_dir=visium
 	;;
@@ -546,6 +549,9 @@ case "${host}" in
         if [ "x${newlib_may_supply_syscalls}" = "xno" ] ; then
           have_crt0="no"
         fi
+	;;
+  vc4-*)
+	sys_dir=vc4
 	;;
   visium-*-*)
 	sys_dir=
