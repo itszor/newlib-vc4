@@ -825,6 +825,9 @@ case "${target}" in
   sparc*-*-*)
     libgloss_dir=sparc
     ;;
+  vc4-*)
+    libgloss_dir=vc4
+    ;;
 esac
 
 # Disable newlib and libgloss for various target OSes.

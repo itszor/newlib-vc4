@@ -77,6 +77,8 @@ case "${target}" in
 	;;
   w65-*-*)
 	;;	
+  vc4-*)
+	;;
   xstormy16-*-*)
 	;;
   z8k-*-*)
