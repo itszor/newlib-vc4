@@ -63,7 +63,9 @@ OBJS = 			\
 	sbrk.o		\
 	vc4-init.o	\
 	write.o		\
-	_exit.o
+	_exit.o		\
+	kill.o		\
+	getpid.o
 
 # Object files specific to particular targets.
 EVALOBJS = ${OBJS}
