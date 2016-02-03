@@ -1,0 +1,32 @@
+	.text
+	.globl setjmp
+setjmp:
+	st r0, (r0)
+	st r1, 4(r0)
+	st r2, 8(r0)
+	st r3, 12(r0)
+	st r4, 16(r0)
+	st r5, 20(r0)
+	st r6, 24(r0)
+	st r7, 28(r0)
+	st r8, 32(r0)
+	st r9, 36(r0)
+	st r10, 40(r0)
+	st r11, 44(r0)
+	st r12, 48(r0)
+	st r13, 52(r0)
+	st r14, 56(r0)
+	st r15, 60(r0)
+	st r16, 64(r0)
+	st r17, 68(r0)
+	st r18, 72(r0)
+	st r19, 76(r0)
+	st r20, 80(r0)
+	st r21, 84(r0)
+	st r22, 88(r0)
+	st r23, 92(r0)
+	st gp, 96(r0)
+	st sp, 100(r0)
+	st lr, 104(r0)
+	mov r0, #0
+	rts
