@@ -31,7 +31,7 @@ GROUP(-lgloss -lc)
 
 MEMORY
 {
-  ram (rwx) : ORIGIN = 0x0, LENGTH = 0xffe00
+  ram (rwx) : ORIGIN = 0x0, LENGTH = 0x08000000
 }
 
 SECTIONS
