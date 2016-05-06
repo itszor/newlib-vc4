@@ -87,7 +87,8 @@ CFLAGS_FOR_TARGET = ${MULTILIB} ${INCLUDES} ${NEWLIB_CFLAGS}
 LDFLAGS_FOR_TARGET = ${MULTILIB} ${NEWLIB_LDFLAGS}
 AR_FLAGS = qc
 
-SCRIPTS = $(srcdir)/vc4-sim.ld
+SCRIPTS = $(srcdir)/vc4-sim.ld \
+	  $(srcdir)/vc4-sram.ld
 
 .c.o:
 	$(CC) $(CFLAGS_FOR_TARGET) -O2 $(INCLUDES) -c $(CFLAGS) $<
