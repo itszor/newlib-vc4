@@ -153,6 +153,7 @@ install:
 	for script in ${SCRIPTS}; do \
  	 $(INSTALL_PROGRAM) $${script} $(DESTDIR)$(tooldir)/lib/; \
 	done; \
+	${mkinstalldirs} ${DESTDIR}${tooldir}/include; \
 	${mkinstalldirs} ${DESTDIR}${tooldir}/include/sys; \
 	for header in ${HEADERS}; do \
 	 $(INSTALL_DATA) ${srcdir}/sys/$${header} \
