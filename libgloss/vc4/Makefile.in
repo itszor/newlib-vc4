@@ -63,6 +63,9 @@ OBJS = 			\
 	sbrk.o		\
 	vc4-init.o	\
 	write.o		\
+	tcgetattr.o	\
+	tcsetattr.o	\
+	select.o	\
 	_exit.o		\
 	kill.o		\
 	getpid.o
@@ -89,6 +92,8 @@ AR_FLAGS = qc
 
 SCRIPTS = $(srcdir)/vc4-sim.ld \
 	  $(srcdir)/vc4-sram.ld
+
+HEADERS = termios.h
 
 .c.o:
 	$(CC) $(CFLAGS_FOR_TARGET) -O2 $(INCLUDES) -c $(CFLAGS) $<
@@ -147,6 +152,11 @@ install:
 	done; \
 	for script in ${SCRIPTS}; do \
  	 $(INSTALL_PROGRAM) $${script} $(DESTDIR)$(tooldir)/lib/; \
+	done; \
+	${mkinstalldirs} ${DESTDIR}${tooldir}/include/sys; \
+	for header in ${HEADERS}; do \
+	 $(INSTALL_DATA) ${srcdir}/sys/$${header} \
+		$(DESTDIR)$(tooldir)/include/sys/$${header}; \
 	done
 
 info:

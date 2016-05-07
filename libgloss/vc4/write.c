@@ -1,6 +1,9 @@
 #include <errno.h>
 #include <stdint.h>
 #include "vc4-regs.h"
+#include "miniuart.h"
+
+unsigned int _miniuart_settings;
 
 static void
 vc4_putchar (unsigned int c)
@@ -29,7 +32,12 @@ write (int fd, const void *buf, unsigned int count)
     }
 
   for (i = 0; i < count; i++)
-    vc4_putchar (bufc[i]);
+    {
+      char c = bufc[i];
+      vc4_putchar (c);
+      if (c == '\n' && (_miniuart_settings & MINIUART_CRLF_OUT))
+        vc4_putchar ('\r');
+    }
 
   return count;
 }
