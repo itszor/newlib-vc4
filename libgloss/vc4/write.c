@@ -5,8 +5,8 @@
 
 unsigned int _miniuart_settings;
 
-static void
-vc4_putchar (unsigned int c)
+void
+__vc4_putchar (unsigned int c)
 {
   unsigned int tmp;
   
@@ -34,9 +34,9 @@ write (int fd, const void *buf, unsigned int count)
   for (i = 0; i < count; i++)
     {
       char c = bufc[i];
-      vc4_putchar (c);
+      __vc4_putchar (c);
       if (c == '\n' && (_miniuart_settings & MINIUART_CRLF_OUT))
-        vc4_putchar ('\r');
+        __vc4_putchar ('\r');
     }
 
   return count;

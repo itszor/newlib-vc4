@@ -14,7 +14,7 @@ __vc4_init (void)
 {
   uintptr_t tmp;
 
-  /* Configure TX and TX GPIO pins for mini-UART function.  */
+  /* Configure RX and TX GPIO pins for mini-UART function.  */
   tmp = MMIO_READ (GPFSEL1);
   tmp &= ~(7 << 12);
   tmp |= 2 << 12;

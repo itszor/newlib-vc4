@@ -28,4 +28,6 @@
 #define SYSTEM_CLOCK		19200000
 #define TARGET_BAUD_RATE	115200
 
+#define ST_CLO                  0x3004
+
 #endif
