@@ -70,7 +70,8 @@ OBJS = 			\
 	select.o	\
 	_exit.o		\
 	kill.o		\
-	getpid.o
+	getpid.o	\
+	open.o
 
 # Object files specific to particular targets.
 EVALOBJS = ${OBJS}
