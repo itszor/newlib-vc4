@@ -5,12 +5,12 @@
 	.global	_init
 	.type	_init, @function
 _init:
-	push lr
+	stm lr, (--sp)
 		
 	.section	".fini"
 	.align	2
 	.global	_fini
 	.type	_fini, @function
 _fini:
-	push lr
+	stm lr, (--sp)
 	

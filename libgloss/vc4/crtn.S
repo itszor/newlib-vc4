@@ -1,7 +1,7 @@
 	.file		"crtn.S"
 
 	.section	".init"
-	pop pc
+	ldm pc, (sp++)
 	
 	.section	".fini"
-	pop pc
+	ldm pc, (sp++)
