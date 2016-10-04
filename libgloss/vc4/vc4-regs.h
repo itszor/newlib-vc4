@@ -25,7 +25,8 @@
 #define MMIO_READ(X) (*(volatile uintptr_t *) (MMIO_BASE + (X)))
 #define MMIO_WRITE(X,V) (*(volatile uintptr_t *) (MMIO_BASE + (X))) = (V)
 
-#define SYSTEM_CLOCK		19200000
+//#define SYSTEM_CLOCK		19200000
+#define SYSTEM_CLOCK		250000000
 #define TARGET_BAUD_RATE	115200
 
 #define ST_CLO                  0x3004

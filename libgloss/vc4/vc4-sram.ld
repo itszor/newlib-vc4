@@ -27,7 +27,7 @@ OUTPUT_FORMAT("elf32-vc4", "elf32-vc4",
               "elf32-vc4")
 OUTPUT_ARCH(vc4)
 ENTRY(_start)
-GROUP(-lgloss -lc)
+GROUP(-lgloss -lc -lsim)
 
 MEMORY
 {

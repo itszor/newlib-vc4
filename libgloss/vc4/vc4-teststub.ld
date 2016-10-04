@@ -1,5 +1,6 @@
 /*
- * Simulator Link script for Broadcom Videocore 4.
+ * Test stub (~256MB SDRAM at 0x20000) link script for Broadcom
+ * Videocore 4.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -27,11 +28,11 @@ OUTPUT_FORMAT("elf32-vc4", "elf32-vc4",
               "elf32-vc4")
 OUTPUT_ARCH(vc4)
 ENTRY(_start)
-GROUP(-lgloss -lc -lsim)
+GROUP(-lgloss -lc -lteststub)
 
 MEMORY
 {
-  ram (rwx) : ORIGIN = 0x0, LENGTH = 0x08000000
+  ram (rwx) : ORIGIN = 0x20000, LENGTH = 0xffe0000
 }
 
 SECTIONS
