@@ -1,7 +1,8 @@
 	.text
 	.global _start
 _start:
-	mov sp, #_fstack
+	mov r28, #_fstack
+	sub sp, r28, #4096
 	
 	bl __vc4_init
 	
