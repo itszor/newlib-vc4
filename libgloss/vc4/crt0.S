@@ -12,6 +12,13 @@ _start:
 	mov r1, #0
 	bl memset
 
+	; Set up to call global destructors
+	mov r0, _fini
+	bl atexit
+
+	; Call global constructors
+	bl _init
+
 	; In case main tries to look at argc, argv (some GCC tests do).
 	mov r0, #0
 	mov r1, #0
