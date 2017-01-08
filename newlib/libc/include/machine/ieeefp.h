@@ -421,6 +421,10 @@
 
 #ifdef __VC4__
 #define __IEEE_LITTLE_ENDIAN
+#ifdef __VC4_SINGLE_FLOAT__
+# define _DOUBLE_IS_32BITS
+# define _FLT_NO_DENORMALS
+#endif
 #endif
 
 #ifndef __IEEE_BIG_ENDIAN
